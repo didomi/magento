@@ -17,7 +17,7 @@ use Magento\Framework\Registry;
 use Magento\Framework\Serialize\Serializer\Json;
 
 /**
- * Class ModuleVersion
+ * Class Version
  *
  * @package   Didomi\ConsentManagement\Model\Config
  * @author    Agence Dn'D <contact@dnd.fr>
@@ -25,7 +25,7 @@ use Magento\Framework\Serialize\Serializer\Json;
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      https://www.dnd.fr/
  */
-class ModuleVersion extends Value
+class Version extends Value
 {
     /**
      * Default Version
@@ -59,7 +59,7 @@ class ModuleVersion extends Value
     protected $moduleName;
 
     /**
-     * ModuleVersion constructor
+     * Version constructor
      *
      * @param Context                     $context
      * @param Registry                    $registry
