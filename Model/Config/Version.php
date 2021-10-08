@@ -34,6 +34,12 @@ class Version extends Value
      */
     public const VERSION = '0.0.0';
     /**
+     * Module name
+     *
+     * @var string MODULE_NAME
+     */
+    public const MODULE_NAME = 'Didomi_ConsentManagement';
+    /**
      * Component Registrar
      *
      * @var ComponentRegistrarInterface $componentRegistrar
@@ -51,12 +57,6 @@ class Version extends Value
      * @var Json $jsonSerializer
      */
     protected $jsonSerializer;
-    /**
-     * Module name
-     *
-     * @var string $moduleName
-     */
-    protected $moduleName;
 
     /**
      * Version constructor
@@ -70,7 +70,6 @@ class Version extends Value
      * @param ComponentRegistrarInterface $componentRegistrar
      * @param ReadFactory                 $readFactory
      * @param Json                        $jsonSerializer
-     * @param string                      $moduleName
      * @param array                       $data
      */
     public function __construct(
@@ -83,7 +82,6 @@ class Version extends Value
         ComponentRegistrarInterface $componentRegistrar,
         ReadFactory $readFactory,
         Json $jsonSerializer,
-        string $moduleName,
         array $data = []
     ) {
         parent::__construct(
@@ -99,7 +97,6 @@ class Version extends Value
         $this->componentRegistrar = $componentRegistrar;
         $this->readFactory        = $readFactory;
         $this->jsonSerializer     = $jsonSerializer;
-        $this->moduleName         = $moduleName;
     }
 
     /**
@@ -112,7 +109,7 @@ class Version extends Value
         /** @var string|null $path */
         $path = $this->componentRegistrar->getPath(
             ComponentRegistrar::MODULE,
-            $this->moduleName
+            self::MODULE_NAME
         );
         /** @var ReadInterface $directoryRead */
         $directoryRead = $this->readFactory->create($path);
