@@ -45,36 +45,20 @@
                 </field>
                 <field id="consent_notice" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Consent Notice Javascript embed code</label>
-                    <depends>
-                        <field id="enable_module">1</field>
-                    </depends>
                 </field>
                 <field id="display_consent_link_footer" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Display Consent Choice Link In Footer</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <depends>
-                        <field id="enable_module">1</field>
-                    </depends>
                 </field>
                 <field id="consent_choice_link_label" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Consent Choice Link Label</label>
-                    <depends>
-                        <field id="enable_module">1</field>
-                    </depends>
                 </field>
                 <field id="condition_ga" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Condition Google Universal Analytics With A Vendor</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
-                    <depends>
-                        <field id="enable_module">1</field>
-                    </depends>
                 </field>
                 <field id="vendor_id" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
                     <label>Vendor ID for Google Universal Analytics Conditioning</label>
-                    <depends>
-                        <field id="enable_module">1</field>
-                        <field id="condition_ga">1</field>
-                    </depends>
                 </field>
             </group>
         </section>

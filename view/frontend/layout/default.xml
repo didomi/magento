@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+
+<!--
+/**
+ * @author    Agence Dn'D <contact@dnd.fr>
+ * @copyright 2004-present Agence Dn'D
+ * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @link      https://www.dnd.fr/
+ */
+-->
+<page xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_configuration.xsd">
+    <body>
+        <referenceBlock name="head.additional">
+            <block name="didomi.head.script" template="Didomi_ConsentManagement::head/script.phtml" before="-">
+                <arguments>
+                    <argument name="didomi_consentement_management_head_script_view_model" xsi:type="object">Didomi\ConsentManagement\ViewModel\HeadScript</argument>
+                </arguments>
+            </block>
+        </referenceBlock>
+    </body>
+</page>
