@@ -16,9 +16,14 @@
                     <argument name="didomi_consentement_management_head_script_view_model" xsi:type="object">Didomi\ConsentManagement\ViewModel\HeadScript</argument>
                 </arguments>
             </block>
+            <block class="Magento\GoogleTagManager\Block\Ga" name="google_analyticsuniversal" as="google_analyticsuniversal" template="Didomi_ConsentManagement::ga.phtml">
+                <arguments>
+                    <argument name="didomi_consentement_management_universal_script_view_model" xsi:type="object">Didomi\ConsentManagement\ViewModel\UniversalScript</argument>
+                </arguments>
+            </block>
         </referenceBlock>
         <referenceBlock name="footer_links">
-            <block class="Magento\Framework\View\Element\Html\Link" name="didomi.footer.link" template="Didomi_ConsentManagement::footer/consent-link.phtml" after="-" >
+            <block class="Magento\Framework\View\Element\Html\Link" name="didomi.footer.link" template="Didomi_ConsentManagement::footer/consent-link.phtml" after="-">
                 <arguments>
                     <argument name="didomi_consentement_management_footer_script_view_model" xsi:type="object">Didomi\ConsentManagement\ViewModel\FooterScript</argument>
                 </arguments>

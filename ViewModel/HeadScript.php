@@ -22,6 +22,6 @@ class HeadScript extends AbstractScript
      */
     public function retrieveHeadScript(): ?string
     {
-        return $this->configProvider->getDidomiHeadScript();
+        return $this->configProvider->getHeadScript();
     }
 }

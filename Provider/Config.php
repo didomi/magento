@@ -42,7 +42,18 @@ class Config
      * @var string XML_PATH_DIDOMI_C0NSENT_CHOICE_LINK_LABEL
      */
     public const XML_PATH_DIDOMI_C0NSENT_CHOICE_LINK_LABEL = 'didomi_consent_management/consent_management/consent_choice_link_label';
-
+    /**
+     * Didomi condition google analytics config path
+     *
+     * @var string XML_PATH_DIDOMI_CONDITION_GA
+     */
+    public const XML_PATH_DIDOMI_CONDITION_GA = 'didomi_consent_management/consent_management/condition_ga';
+    /**
+     * Didomi vendor id config path
+     *
+     * @var string XML_PATH_DIDOMI_VENDOR_ID
+     */
+    public const XML_PATH_DIDOMI_VENDOR_ID = 'didomi_consent_management/consent_management/vendor_id';
     /**
      * Description $scopeConfig field
      *
@@ -62,13 +73,13 @@ class Config
     }
 
     /**
-     * Description getDidomiHeadScript function
+     * Description getHeadScript function
      *
      * @param null $website
      *
      * @return string|null
      */
-    public function getDidomiHeadScript($website = null): ?string
+    public function getHeadScript($website = null): ?string
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_DIDOMI_HEAD_SCRIPT,
@@ -120,6 +131,38 @@ class Config
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_DIDOMI_C0NSENT_CHOICE_LINK_LABEL,
+            ScopeInterface::SCOPE_STORE,
+            $store
+        );
+    }
+
+    /**
+     * Description isDisplayConsentLinkFooter function
+     *
+     * @param null $website
+     *
+     * @return string
+     */
+    public function isConditionGa($website = null): string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DIDOMI_CONDITION_GA,
+            ScopeInterface::SCOPE_WEBSITES,
+            $website
+        );
+    }
+
+    /**
+     * Description getVendorId function
+     *
+     * @param null $store
+     *
+     * @return string|null
+     */
+    public function getVendorId($store = null): ?string
+    {
+        return $this->scopeConfig->getValue(
+            self::XML_PATH_DIDOMI_VENDOR_ID,
             ScopeInterface::SCOPE_STORE,
             $store
         );
