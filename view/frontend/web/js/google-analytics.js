@@ -1,7 +1,10 @@
 /**
- * Copyright © Magento, Inc. All rights reserved.
- * See COPYING.txt for license details.
+ * @author    Agence Dn'D <contact@dnd.fr>
+ * @copyright 2004-present Agence Dn'D
+ * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @link      https://www.dnd.fr/
  */
+
 /* jscs:disable */
 /* eslint-disable */
 define([
@@ -14,12 +17,30 @@ define([
      * @param {Object} config
      */
     return function (config) {
-
         var allowServices = false,
             allowedCookies,
             allowedWebsites;
 
-        if (config.isCookieRestrictionModeEnabled) {
+        if (config.isDidomiUniversalAnalyticsVendorEnabled) {
+            window.didomiOnReady = window.didomiOnReady || [];
+            window.didomiOnReady.push(function (Didomi) {
+                if (Didomi.isConsentRequired()) {
+                    // Consent is required: your visitor is from the EU or you are an EU company
+                    // Only enable the vendor when consent is given
+                    Didomi.getObservableOnUserConsentStatusForVendor(config.didomiUniversalAnalyticsVendorId)
+                    .filter(function(status) { return status === true; }) // Filter out updates where status is not true
+                        .first() // Only get the first consent status update
+                        .subscribe(function (consentStatusForVendor) {
+                            // The user has given consent to the vendor
+                            // Enable it
+                            allowServices = true;
+                        });
+                } else {
+                    // Consent is not required, enable your vendor immediately
+                    allowServices = true;
+                }
+            });
+        } else if (config.isCookieRestrictionModeEnabled) {
             allowedCookies = $.mage.cookies.get(config.cookieName);
 
             if (allowedCookies !== null) {

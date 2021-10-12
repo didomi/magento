@@ -19,11 +19,11 @@ use Magento\Store\Model\ScopeInterface;
 class Config
 {
     /**
-     * Didomi head script config path
+     * Didomi consent notice config path
      *
-     * @var string XML_PATH_DIDOMI_HEAD_SCRIPT
+     * @var string XML_PATH_DIDOMI_CONSENT_NOTICE
      */
-    public const XML_PATH_DIDOMI_HEAD_SCRIPT = 'didomi_consent_management/consent_management/consent_notice';
+    public const XML_PATH_DIDOMI_CONSENT_NOTICE = 'didomi_consent_management/consent_management/consent_notice';
     /**
      * Didomi enable module config path
      *
@@ -79,10 +79,10 @@ class Config
      *
      * @return string|null
      */
-    public function getHeadScript($website = null): ?string
+    public function getConsentNotice($website = null): ?string
     {
         return $this->scopeConfig->getValue(
-            self::XML_PATH_DIDOMI_HEAD_SCRIPT,
+            self::XML_PATH_DIDOMI_CONSENT_NOTICE,
             ScopeInterface::SCOPE_WEBSITES,
             $website
         );
@@ -137,7 +137,7 @@ class Config
     }
 
     /**
-     * Description isDisplayConsentLinkFooter function
+     * Description isConditionGa function
      *
      * @param null $website
      *

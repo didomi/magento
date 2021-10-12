@@ -20,8 +20,8 @@ class HeadScript extends AbstractScript
      *
      * @return string|null
      */
-    public function retrieveHeadScript(): ?string
+    public function retrieveConsentNotice(): ?string
     {
-        return $this->configProvider->getHeadScript();
+        return $this->configProvider->getConsentNotice();
     }
 }
