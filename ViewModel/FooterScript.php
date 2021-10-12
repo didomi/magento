@@ -4,9 +4,6 @@ declare(strict_types=1);
 
 namespace Didomi\ConsentManagement\ViewModel;
 
-use Didomi\ConsentManagement\Provider\Config;
-use Magento\Framework\View\Element\Block\ArgumentInterface;
-
 /**
  * Class FooterScript
  *
@@ -16,26 +13,8 @@ use Magento\Framework\View\Element\Block\ArgumentInterface;
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      https://www.dnd.fr/
  */
-class FooterScript implements ArgumentInterface
+class FooterScript extends AbstractScript
 {
-    /**
-     * ConfigProvider
-     *
-     * @var Config $configProvider
-     */
-    protected $configProvider;
-
-    /**
-     * HeadScript constructor
-     *
-     * @param Config $configProvider
-     */
-    public function __construct(
-        Config $configProvider
-    ) {
-        $this->configProvider = $configProvider;
-    }
-
     /**
      * Description isDidomiDisplayConsentLinkFooter function
      *
@@ -47,16 +26,6 @@ class FooterScript implements ArgumentInterface
     }
 
     /**
-     * Description isDidomiEnable function
-     *
-     * @return string
-     */
-    public function isDidomiEnable(): string
-    {
-        return $this->configProvider->isEnableModule();
-    }
-
-    /**
      * Description retrieveConsentChoiceLinkLabel function
      *
      * @return string|null
@@ -65,5 +34,4 @@ class FooterScript implements ArgumentInterface
     {
         return $this->configProvider->getConsentChoiceLinkLabel();
     }
-
 }
