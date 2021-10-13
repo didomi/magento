@@ -97,7 +97,7 @@ class Config
      */
     public function isEnableModule($website = null): bool
     {
-        return $this->scopeConfig->getValue(
+        return (bool)$this->scopeConfig->getValue(
             self::XML_PATH_DIDOMI_ENABLE_MODULE,
             ScopeInterface::SCOPE_WEBSITES,
             $website
@@ -113,7 +113,7 @@ class Config
      */
     public function isDisplayConsentLinkFooter($website = null): bool
     {
-        return $this->scopeConfig->getValue(
+        return (bool)$this->scopeConfig->getValue(
             self::XML_PATH_DIDOMI_DISPLAY_CONSENT_LINK_FOOTER,
             ScopeInterface::SCOPE_WEBSITES,
             $website
@@ -145,7 +145,7 @@ class Config
      */
     public function isConditionGa($website = null): bool
     {
-        return $this->scopeConfig->getValue(
+        return (bool)$this->scopeConfig->getValue(
             self::XML_PATH_DIDOMI_CONDITION_GA,
             ScopeInterface::SCOPE_WEBSITES,
             $website
