@@ -18,9 +18,9 @@ class UniversalScript extends AbstractScript
     /**
      * Description isDidomiConditionGa function
      *
-     * @return string
+     * @return bool
      */
-    public function isDidomiConditionGa(): string
+    public function isDidomiConditionGa(): bool
     {
         return $this->configProvider->isConditionGa();
     }

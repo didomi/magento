@@ -18,9 +18,9 @@ class FooterScript extends AbstractScript
     /**
      * Description isDidomiDisplayConsentLinkFooter function
      *
-     * @return string
+     * @return bool
      */
-    public function isDidomiDisplayConsentLinkFooter(): string
+    public function isDidomiDisplayConsentLinkFooter(): bool
     {
         return $this->configProvider->isDisplayConsentLinkFooter();
     }

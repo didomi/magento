@@ -73,9 +73,9 @@ class Config
     }
 
     /**
-     * Description getHeadScript function
+     * Description getConsentNotice function
      *
-     * @param null $website
+     * @param string|null $website
      *
      * @return string|null
      */
@@ -91,11 +91,11 @@ class Config
     /**
      * Description isEnableModule function
      *
-     * @param null $website
+     * @param string|null $website
      *
-     * @return string
+     * @return bool
      */
-    public function isEnableModule($website = null): string
+    public function isEnableModule($website = null): bool
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_DIDOMI_ENABLE_MODULE,
@@ -107,11 +107,11 @@ class Config
     /**
      * Description isDisplayConsentLinkFooter function
      *
-     * @param null $website
+     * @param string|null $website
      *
-     * @return string
+     * @return bool
      */
-    public function isDisplayConsentLinkFooter($website = null): string
+    public function isDisplayConsentLinkFooter($website = null): bool
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_DIDOMI_DISPLAY_CONSENT_LINK_FOOTER,
@@ -123,7 +123,7 @@ class Config
     /**
      * Description getConsentChoiceLinkLabel function
      *
-     * @param null $store
+     * @param string|null $store
      *
      * @return string|null
      */
@@ -139,11 +139,11 @@ class Config
     /**
      * Description isConditionGa function
      *
-     * @param null $website
+     * @param string|null $website
      *
-     * @return string
+     * @return bool
      */
-    public function isConditionGa($website = null): string
+    public function isConditionGa($website = null): bool
     {
         return $this->scopeConfig->getValue(
             self::XML_PATH_DIDOMI_CONDITION_GA,
@@ -155,7 +155,7 @@ class Config
     /**
      * Description getVendorId function
      *
-     * @param null $store
+     * @param string|null $store
      *
      * @return string|null
      */

@@ -26,7 +26,7 @@ abstract class AbstractScript implements ArgumentInterface
     protected $configProvider;
 
     /**
-     * HeadScript constructor
+     * AbstractScript constructor
      *
      * @param Config $configProvider
      */
@@ -39,9 +39,9 @@ abstract class AbstractScript implements ArgumentInterface
     /**
      * Description isDidomiEnable function
      *
-     * @return string
+     * @return bool
      */
-    public function isDidomiEnable(): string
+    public function isDidomiEnable(): bool
     {
         return $this->configProvider->isEnableModule();
     }

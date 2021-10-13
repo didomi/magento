@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Didomi\ConsentManagement\Block\Adminhtml\System\Config;
 
-use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 
@@ -24,20 +23,7 @@ class ConsoleLink extends Field
      *
      * @var string CONSOLE_LINK
      */
-    public const CONSOLE_LINK = "https://console.didomi.io";
-
-    /**
-     * DocumentationLink constructor
-     *
-     * @param Context $context
-     * @param array   $data
-     */
-    public function __construct(
-        Context $context,
-        array $data = []
-    ) {
-        parent::__construct($context, $data);
-    }
+    public const CONSOLE_LINK = 'https://console.didomi.io';
 
     /**
      * Description _getElementHtml function
@@ -51,7 +37,7 @@ class ConsoleLink extends Field
         /** @var string $html */
         $html = $element->getElementHtml();
 
-        $html .= '<a target="_blank" href="' . self::CONSOLE_LINK . '" title="' . __('Console') . '">' .  self::CONSOLE_LINK . '</a>';
+        $html .= '<a target="_blank" href="' . self::CONSOLE_LINK . '" title="' . __('Console') . '">' . self::CONSOLE_LINK . '</a>';
 
         return $html;
     }

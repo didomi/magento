@@ -16,7 +16,7 @@ namespace Didomi\ConsentManagement\ViewModel;
 class HeadScript extends AbstractScript
 {
     /**
-     * Description retrieveHeadScript function
+     * Description retrieveConsentNotice function
      *
      * @return string|null
      */
