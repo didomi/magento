@@ -10,7 +10,9 @@ use Magento\Framework\App\Config\Value;
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Component\ComponentRegistrarInterface;
 use Magento\Framework\Data\Collection\AbstractDb;
+use Magento\Framework\Exception\FileSystemException;
 use Magento\Framework\Filesystem\Directory\ReadFactory;
+use Magento\Framework\Filesystem\Directory\ReadInterface;
 use Magento\Framework\Model\Context;
 use Magento\Framework\Model\ResourceModel\AbstractResource;
 use Magento\Framework\Registry;
@@ -103,6 +105,7 @@ class Version extends Value
      * Get module version for admin display
      *
      * @return string
+     * @throws FileSystemException
      */
     public function getModuleVersion(): string
     {
@@ -124,12 +127,15 @@ class Version extends Value
     /**
      * After load
      *
-     * @return void
+     * @return Version
+     * @throws FileSystemException
      */
-    public function afterLoad(): void
+    public function afterLoad(): Version
     {
         /** @var string $version */
         $version = $this->getModuleVersion();
         $this->setValue($version);
+
+        return $this;
     }
 }

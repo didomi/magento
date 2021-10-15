@@ -10,5 +10,10 @@
  */
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Module/etc/module.xsd">
-    <module name="Didomi_ConsentManagement"/>
+    <module name="Didomi_ConsentManagement">
+        <sequence>
+            <module name="Magento_GoogleTagManager"/>
+            <module name="Magento_GoogleAnalytics"/>
+        </sequence>
+    </module>
 </config>
