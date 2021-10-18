@@ -8,7 +8,7 @@
 var config = {
     map: {
         '*': {
-            didomiConsent : 'Didomi_ConsentManagement/js/google-analytics'
+            didomiConsent: 'Didomi_ConsentManagement/js/google-analytics'
         }
     }
 };
