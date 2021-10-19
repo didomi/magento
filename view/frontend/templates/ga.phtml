@@ -7,7 +7,7 @@
  * @link      https://www.dnd.fr/
  */
 
-use Didomi\ConsentManagement\ViewModel\UniversalScript;
+use Didomi\ConsentManagement\ViewModel\UniversalTag;
 use Magento\Cookie\Helper\Cookie;
 use Magento\GoogleTagManager\Block\Ga;
 use Magento\GoogleTagManager\Helper\Data;
@@ -18,7 +18,7 @@ $accountType = $block->getConfig(Data::XML_PATH_TYPE);
 $gtmAccountId = $block->getConfig(Data::XML_PATH_CONTAINER_ID);
 $gapAccountId = $block->getConfig(Data::XML_PATH_ACCOUNT);
 
-/** @var UniversalScript $viewModel */
+/** @var UniversalTag $viewModel */
 $viewModel = $block->getDidomiConsentManagementUniversalScriptViewModel();
 switch ($accountType) {
     case Data::TYPE_TAG_MANAGER:

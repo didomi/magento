@@ -7,12 +7,12 @@
  * @link      https://www.dnd.fr/
  */
 
-use Didomi\ConsentManagement\ViewModel\FooterScript;
+use Didomi\ConsentManagement\ViewModel\FooterLink;
 use Magento\Framework\View\Element\Template;
 
 /** @var Template $block */
 
-/** @var FooterScript $viewModel */
+/** @var FooterLink $viewModel */
 $viewModel = $block->getDidomiConsentManagementFooterScriptViewModel();
 /** @var string $label */
 $label = $viewModel->retrieveConsentChoiceLinkLabel() ?? __('Consent Choices');

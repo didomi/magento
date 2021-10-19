@@ -5,7 +5,7 @@ declare(strict_types=1);
 namespace Didomi\ConsentManagement\ViewModel;
 
 /**
- * Class FooterScript
+ * Class UniversalTag
  *
  * @package   Didomi\ConsentManagement\ViewModel
  * @author    Agence Dn'D <contact@dnd.fr>
@@ -13,25 +13,25 @@ namespace Didomi\ConsentManagement\ViewModel;
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
  * @link      https://www.dnd.fr/
  */
-class FooterScript extends AbstractScript
+class UniversalTag extends AbstractScript
 {
     /**
-     * Description isDidomiDisplayConsentLinkFooter function
+     * Description isDidomiConditionGa function
      *
      * @return bool
      */
-    public function isDidomiDisplayConsentLinkFooter(): bool
+    public function isDidomiConditionGa(): bool
     {
-        return $this->configProvider->isDisplayConsentLinkFooter();
+        return $this->configProvider->isConditionGa();
     }
 
     /**
-     * Description retrieveConsentChoiceLinkLabel function
+     * Description retrieveVendorId function
      *
      * @return string|null
      */
-    public function retrieveConsentChoiceLinkLabel(): ?string
+    public function retrieveVendorId(): ?string
     {
-        return $this->configProvider->getConsentChoiceLinkLabel();
+        return $this->configProvider->getVendorId();
     }
 }
