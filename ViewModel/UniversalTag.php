@@ -22,7 +22,7 @@ class UniversalTag extends AbstractScript
      */
     public function isDidomiConditionGa(): bool
     {
-        return $this->configProvider->isConditionGa();
+        return $this->configProvider->isConditionGa() && $this->isDidomiEnable();
     }
 
     /**
