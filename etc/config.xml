@@ -11,13 +11,13 @@
 -->
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
     <default>
-        <didomi_consent_management>
+        <didomi>
             <consent_management>
                 <enable_module>0</enable_module>
                 <display_consent_link_footer>1</display_consent_link_footer>
                 <consent_choice_link_label>Consent Choices</consent_choice_link_label>
                 <condition_ga>0</condition_ga>
             </consent_management>
-        </didomi_consent_management>
+        </didomi>
     </default>
 </config>

@@ -14,7 +14,7 @@
         <tab id="didomi" translate="label" sortOrder="100">
             <label>Didomi</label>
         </tab>
-        <section id="didomi_consent_management" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="didomi" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Didomi - Consent Management</label>
             <tab>didomi</tab>
             <resource>Didomi_ConsentManagement::system_config</resource>

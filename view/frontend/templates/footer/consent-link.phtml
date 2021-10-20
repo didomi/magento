@@ -20,6 +20,6 @@ $label = $viewModel->retrieveConsentChoiceLinkLabel() ?? __('Consent Choices');
 
 <?php if ($viewModel->isDidomiEnable() && $viewModel->isDidomiDisplayConsentLinkFooter()): ?>
     <li class="nav item">
-        <a href="javascript:Didomi.preferences.show()"><?= $label ?></a>
+        <a href="javascript:Didomi.preferences.show()"><?= /* @noEscape */ $label ?></a>
     </li>
 <?php endif ?>

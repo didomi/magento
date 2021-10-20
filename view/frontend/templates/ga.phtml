@@ -57,7 +57,7 @@ switch ($accountType) {
                         "ordersTrackingData": <?= /* @noEscape */ json_encode($block->getOrdersTrackingData()) ?>,
                         "pageTrackingData": <?= /* @noEscape */ json_encode($block->getPageTrackingData($gapAccountId)) ?>,
                         "isDidomiUniversalAnalyticsVendorEnabled": <?= (int)$viewModel->isDidomiConditionGa() ?>,
-                        "didomiUniversalAnalyticsVendorId": "<?= $viewModel->retrieveVendorId() ?>"
+                        "didomiUniversalAnalyticsVendorId": "<?= /* @noEscape */ $viewModel->retrieveVendorId() ?>"
                     }
                 }
             }
