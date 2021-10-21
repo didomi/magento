@@ -17,5 +17,5 @@ $viewModel = $block->getDidomiConsentManagementHeadScriptViewModel()
 ?>
 
 <?php if ($viewModel->isDidomiEnable() && $viewModel->retrieveConsentNotice() !== null): ?>
-    <?= $viewModel->retrieveConsentNotice() ?>
+    <?= /* @noEscape */ $viewModel->retrieveConsentNotice() ?>
 <?php endif ?>

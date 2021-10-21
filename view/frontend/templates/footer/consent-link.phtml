@@ -7,19 +7,19 @@
  * @link      https://www.dnd.fr/
  */
 
-use Didomi\ConsentManagement\ViewModel\FooterScript;
+use Didomi\ConsentManagement\ViewModel\FooterLink;
 use Magento\Framework\View\Element\Template;
 
 /** @var Template $block */
 
-/** @var FooterScript $viewModel */
-$viewModel = $block->getDidomiConsentManagementFooterScriptViewModel();
+/** @var FooterLink $viewModel */
+$viewModel = $block->getDidomiConsentManagementFooterLinkViewModel();
 /** @var string $label */
 $label = $viewModel->retrieveConsentChoiceLinkLabel() ?? __('Consent Choices');
 ?>
 
 <?php if ($viewModel->isDidomiEnable() && $viewModel->isDidomiDisplayConsentLinkFooter()): ?>
-<li class="nav item">
-    <a href="javascript:Didomi.preferences.show()"><?= $label ?></a>
-</li>
+    <li class="nav item">
+        <a href="javascript:Didomi.preferences.show()"><?= $block->escapeHtml($label) ?></a>
+    </li>
 <?php endif ?>

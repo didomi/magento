@@ -8,9 +8,8 @@ use Magento\Config\Block\System\Config\Form\Field;
 use Magento\Framework\Data\Form\Element\AbstractElement;
 
 /**
- * Class ConsoleLink
+ * Block to manage ConsoleLink
  *
- * @package   Didomi\ConsentManagement\Block\Adminhtml\System\Config
  * @author    Agence Dn'D <contact@dnd.fr>
  * @copyright 2004-present Agence Dn'D
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
