@@ -1,0 +1,25 @@
+<?php
+
+/**
+ * @author    Agence Dn'D <contact@dnd.fr>
+ * @copyright 2004-present Agence Dn'D
+ * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @link      https://www.dnd.fr/
+ */
+
+use Didomi\ConsentManagement\ViewModel\FooterLink;
+use Magento\Framework\View\Element\Template;
+
+/** @var Template $block */
+
+/** @var FooterLink $viewModel */
+$viewModel = $block->getDidomiConsentManagementFooterLinkViewModel();
+/** @var string $label */
+$label = $viewModel->retrieveConsentChoiceLinkLabel() ?? __('Consent Choices');
+?>
+
+<?php if ($viewModel->isDidomiEnable() && $viewModel->isDidomiDisplayConsentLinkFooter()): ?>
+    <li class="nav item">
+        <a href="javascript:Didomi.preferences.show()"><?= $block->escapeHtml($label) ?></a>
+    </li>
+<?php endif ?>

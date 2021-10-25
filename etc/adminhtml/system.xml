@@ -14,15 +14,51 @@
         <tab id="didomi" translate="label" sortOrder="100">
             <label>Didomi</label>
         </tab>
-        <section id="didomi_consent_management" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
+        <section id="didomi" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
             <label>Didomi - Consent Management</label>
             <tab>didomi</tab>
             <resource>Didomi_ConsentManagement::system_config</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
                 <label>General</label>
                 <field id="version" translate="label" type="label" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                    <label>Extension Version</label>
+                    <label>Module version</label>
                     <backend_model>Didomi\ConsentManagement\Model\Config\Version</backend_model>
+                </field>
+                <field id="documentation_link" translate="label" type="label" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Documentation</label>
+                    <frontend_model>Didomi\ConsentManagement\Block\Adminhtml\System\Config\DocumentationLink</frontend_model>
+                </field>
+                <field id="console_link" translate="label" type="label" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Didomi Console</label>
+                    <frontend_model>Didomi\ConsentManagement\Block\Adminhtml\System\Config\ConsoleLink</frontend_model>
+                </field>
+                <field id="support_link" translate="label" type="label" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Didomi Support</label>
+                    <frontend_model>Didomi\ConsentManagement\Block\Adminhtml\System\Config\SupportLink</frontend_model>
+                </field>
+            </group>
+            <group id="consent_management" translate="label" type="text" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="1">
+                <label>Didomi Consent Management</label>
+                <field id="enable_module" translate="label" type="select" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Enable module</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="consent_notice" translate="label" type="textarea" sortOrder="20" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Consent Notice Javascript embed code</label>
+                </field>
+                <field id="display_consent_link_footer" translate="label" type="select" sortOrder="30" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Display Consent Choice Link In Footer</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="consent_choice_link_label" translate="label" type="text" sortOrder="40" showInDefault="1" showInWebsite="1" showInStore="1">
+                    <label>Consent Choice Link Label</label>
+                </field>
+                <field id="condition_ga" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Condition Google Universal Analytics With A Vendor</label>
+                    <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+                <field id="vendor_id" translate="label" type="text" sortOrder="60" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Vendor ID for Google Universal Analytics Conditioning</label>
                 </field>
             </group>
         </section>

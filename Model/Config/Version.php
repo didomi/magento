@@ -10,16 +10,17 @@ use Magento\Framework\App\Config\Value;
 use Magento\Framework\Component\ComponentRegistrar;
 use Magento\Framework\Component\ComponentRegistrarInterface;
 use Magento\Framework\Data\Collection\AbstractDb;
+use Magento\Framework\Exception\FileSystemException;
 use Magento\Framework\Filesystem\Directory\ReadFactory;
+use Magento\Framework\Filesystem\Directory\ReadInterface;
 use Magento\Framework\Model\Context;
 use Magento\Framework\Model\ResourceModel\AbstractResource;
 use Magento\Framework\Registry;
 use Magento\Framework\Serialize\Serializer\Json;
 
 /**
- * Class Version
+ * Model to manage Version
  *
- * @package   Didomi\ConsentManagement\Model\Config
  * @author    Agence Dn'D <contact@dnd.fr>
  * @copyright 2004-present Agence Dn'D
  * @license   https://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
@@ -103,6 +104,7 @@ class Version extends Value
      * Get module version for admin display
      *
      * @return string
+     * @throws FileSystemException
      */
     public function getModuleVersion(): string
     {
@@ -124,12 +126,15 @@ class Version extends Value
     /**
      * After load
      *
-     * @return void
+     * @return Version
+     * @throws FileSystemException
      */
-    public function afterLoad(): void
+    public function afterLoad(): Version
     {
         /** @var string $version */
         $version = $this->getModuleVersion();
         $this->setValue($version);
+
+        return $this;
     }
 }
