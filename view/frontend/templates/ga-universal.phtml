@@ -19,7 +19,7 @@ $gtmAccountId = $block->getConfig(Data::XML_PATH_CONTAINER_ID);
 $gapAccountId = $block->getConfig(Data::XML_PATH_ACCOUNT);
 
 /** @var UniversalTag $viewModel */
-$viewModel = $block->getDidomiConsentManagementUniversalTagViewModel();
+$viewModel = $block->getDidomiConsentManagementGaUniversalTagViewModel();
 switch ($accountType) {
     case Data::TYPE_TAG_MANAGER:
         if (!empty($gtmAccountId)) {
