@@ -9,61 +9,29 @@
 
 use Didomi\ConsentManagement\ViewModel\UniversalTag;
 use Magento\Cookie\Helper\Cookie;
-use Magento\GoogleTagManager\Block\Ga;
-use Magento\GoogleTagManager\Helper\Data;
+use Magento\GoogleAnalytics\Block\Ga;
+use Magento\GoogleAnalytics\Helper\Data;
 
 /** @var Ga $block */
 
-$accountType = $block->getConfig(Data::XML_PATH_TYPE);
-$gtmAccountId = $block->getConfig(Data::XML_PATH_CONTAINER_ID);
-$gapAccountId = $block->getConfig(Data::XML_PATH_ACCOUNT);
-
 /** @var UniversalTag $viewModel */
 $viewModel = $block->getDidomiConsentManagementUniversalTagViewModel();
-switch ($accountType) {
-    case Data::TYPE_TAG_MANAGER:
-        if (!empty($gtmAccountId)) {
-            ?>
-            <!-- GOOGLE TAG MANAGER -->
-            <script type="text/x-magento-init">
-            {
-                "*": {
-                    "Magento_GoogleTagManager/js/google-tag-manager": {
-                        "isCookieRestrictionModeEnabled": <?= (int)$block->isCookieRestrictionModeEnabled() ?>,
-                        "currentWebsite": <?= (int)$block->getCurrentWebsiteId() ?>,
-                        "cookieName": "<?= /* @noEscape */ Cookie::IS_USER_ALLOWED_SAVE_COOKIE ?>",
-                        "gtmAccountId": "<?= $block->escapeJs($gtmAccountId) ?>",
-                        "storeCurrencyCode": "<?= $block->escapeJs($block->getStoreCurrencyCode()) ?>",
-                        "ordersData": <?= /* @noEscape */ json_encode($block->getOrdersDataArray()) ?>
-                    }
-                }
-            }
-            </script>
-            <!-- END GOOGLE TAG MANAGER -->
-            <?php
+$accountId = $block->getConfig(Data::XML_PATH_ACCOUNT);
+?>
+<!-- BEGIN GOOGLE ANALYTICS CODE -->
+<script type="text/x-magento-init">
+{
+    "*": {
+        "didomiConsent": {
+            "isCookieRestrictionModeEnabled": <?= (int)$block->isCookieRestrictionModeEnabled() ?>,
+            "currentWebsite": <?= (int)$block->getCurrentWebsiteId() ?>,
+            "cookieName": "<?= /* @noEscape */ Cookie::IS_USER_ALLOWED_SAVE_COOKIE ?>",
+            "ordersTrackingData": <?= /* @noEscape */ json_encode($block->getOrdersTrackingData()) ?>,
+            "pageTrackingData": <?= /* @noEscape */ json_encode($block->getPageTrackingData($accountId)) ?>,
+            "isDidomiUniversalAnalyticsVendorEnabled": <?= (int)$viewModel->isDidomiConditionGa() ?>,
+            "didomiUniversalAnalyticsVendorId": "<?= /* @noEscape */ $viewModel->retrieveVendorId() ?>"
         }
-        break;
-    case Data::TYPE_UNIVERSAL:
-        if (!empty($gapAccountId)) {
-            ?>
-            <!-- BEGIN GOOGLE UNIVERSAL ANALYTICS CODE -->
-            <script type="text/x-magento-init">
-            {
-                "*": {
-                    "didomiConsent" : {
-                        "isCookieRestrictionModeEnabled": <?= (int)$block->isCookieRestrictionModeEnabled() ?>,
-                        "currentWebsite": <?= (int)$block->getCurrentWebsiteId() ?>,
-                        "cookieName": "<?= /* @noEscape */ Cookie::IS_USER_ALLOWED_SAVE_COOKIE ?>",
-                        "ordersTrackingData": <?= /* @noEscape */ json_encode($block->getOrdersTrackingData()) ?>,
-                        "pageTrackingData": <?= /* @noEscape */ json_encode($block->getPageTrackingData($gapAccountId)) ?>,
-                        "isDidomiUniversalAnalyticsVendorEnabled": <?= (int)$viewModel->isDidomiConditionGa() ?>,
-                        "didomiUniversalAnalyticsVendorId": "<?= /* @noEscape */ $viewModel->retrieveVendorId() ?>"
-                    }
-                }
-            }
-            </script>
-            <!-- END GOOGLE UNIVERSAL ANALYTICS CODE -->
-            <?php
-        }
-        break;
+    }
 }
+</script>
+<!-- END GOOGLE ANALYTICS CODE -->
