@@ -29,7 +29,7 @@ $accountId = $block->getConfig(Data::XML_PATH_ACCOUNT);
             "ordersTrackingData": <?= /* @noEscape */ json_encode($block->getOrdersTrackingData()) ?>,
             "pageTrackingData": <?= /* @noEscape */ json_encode($block->getPageTrackingData($accountId)) ?>,
             "isDidomiUniversalAnalyticsVendorEnabled": <?= (int)$viewModel->isDidomiConditionGa() ?>,
-            "didomiUniversalAnalyticsVendorId": "<?= /* @noEscape */ $viewModel->retrieveVendorId() ?>"
+            "didomiUniversalAnalyticsVendorId": "<?= /* @noEscape */ $viewModel->getVendorId() ?>"
         }
     }
 }

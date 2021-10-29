@@ -15,6 +15,13 @@ namespace Didomi\ConsentManagement\ViewModel;
 class UniversalTag extends AbstractScript
 {
     /**
+     * Didomi Vendor Id constant
+     *
+     * @var string DIDOMI_VENDOR_ID
+     */
+    public const DIDOMI_VENDOR_ID = 'c:googleana-4TXnJigR';
+
+    /**
      * Description isDidomiConditionGa function
      *
      * @return bool
@@ -25,12 +32,12 @@ class UniversalTag extends AbstractScript
     }
 
     /**
-     * Description retrieveVendorId function
+     * Description getVendorId function
      *
-     * @return string|null
+     * @return string
      */
-    public function retrieveVendorId(): ?string
+    public function getVendorId(): string
     {
-        return $this->configProvider->getVendorId();
+        return self::DIDOMI_VENDOR_ID;
     }
 }
