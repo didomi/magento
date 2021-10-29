@@ -48,12 +48,6 @@ class Config
      */
     public const XML_PATH_DIDOMI_CONDITION_GA = 'didomi/consent_management/condition_ga';
     /**
-     * Didomi vendor id config path
-     *
-     * @var string XML_PATH_DIDOMI_VENDOR_ID
-     */
-    public const XML_PATH_DIDOMI_VENDOR_ID = 'didomi/consent_management/vendor_id';
-    /**
      * Description $scopeConfig field
      *
      * @var ScopeConfigInterface $scopeConfig
@@ -148,22 +142,6 @@ class Config
             self::XML_PATH_DIDOMI_CONDITION_GA,
             ScopeInterface::SCOPE_WEBSITES,
             $website
-        );
-    }
-
-    /**
-     * Description getVendorId function
-     *
-     * @param string|null $store
-     *
-     * @return string|null
-     */
-    public function getVendorId($store = null): ?string
-    {
-        return $this->scopeConfig->getValue(
-            self::XML_PATH_DIDOMI_VENDOR_ID,
-            ScopeInterface::SCOPE_STORE,
-            $store
         );
     }
 }
