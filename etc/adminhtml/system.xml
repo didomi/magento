@@ -54,8 +54,9 @@
                     <label>Consent Choice Link Label</label>
                 </field>
                 <field id="condition_ga" translate="label" type="select" sortOrder="50" showInDefault="1" showInWebsite="1" showInStore="0">
-                    <label>Condition Google Universal Analytics With A Vendor</label>
+                    <label>Condition Google Universal Analytics With Google Analytics Products Vendor</label>
                     <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                    <comment>IAB/SDK ID: "c:googleana-4TXnJigR"</comment>
                 </field>
             </group>
         </section>
