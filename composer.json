@@ -4,7 +4,7 @@
   "keywords": ["didomi", "consent", "management", "cookie", "cookies", "gdpr", "rgpd"],
   "require": {
     "php": "~7.1.3||~7.2.0||~7.3.0||~7.4.0",
-    "magento/framework": "*"
+    "magento/framework": ">=100.0.1"
   },
   "type": "magento2-module",
   "version": "100.0.0",
