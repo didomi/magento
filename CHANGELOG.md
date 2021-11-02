@@ -1,5 +1,5 @@
 # Changelog
 
-## Version 0.1.0 - 20XX-XX-XX
+## Version 100.0.0 - 2021-11-08
 ### Added
-- Add initial version
+- Add initial Didomi Consent Management version
