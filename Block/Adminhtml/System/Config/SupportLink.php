@@ -22,7 +22,7 @@ class SupportLink extends Field
      *
      * @var string SUPPORT_LINK
      */
-    public const SUPPORT_LINK = 'https://support.didomi.io';
+    public const SUPPORT_LINK = 'https://support.didomi.io/set-up-didomi-for-magento-2';
 
     /**
      * Description _getElementHtml function
