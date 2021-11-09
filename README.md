@@ -19,6 +19,7 @@ Please consult our [pricing page](https://www.didomi.io/pricing) for more inform
 * Build and customize your consent banner through Didomi console
 * Include the Didomi CMP on your Magento website in a few seconds
 * Condition tags & cookies based on consent, including Google Analytics natively part of Magento
+* Add a link in Magento footer to consult and modify cookie consent choices
 
 ### Documentation:
 
