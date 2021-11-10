@@ -56,7 +56,7 @@ bin/magento cache:flush
 ```
 ### Installation from Magento 2 Marketplace:
 
-Please see the official Didomi Consent Management Extension page on the [Magento 2 Marketplace](https://marketplace.magento.com/extensions/content-customizations/personalization-experience-management.html).
+Please see the official Didomi Consent Management Extension page on the [Magento 2 Marketplace](https://marketplace.magento.com/didomi-module-consent-management.html).
 
 ### Requirements:
 
