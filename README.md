@@ -1,4 +1,6 @@
-# Didomi Consent Management for Magento 2:
+# Didomi Consent Management for Magento 2 (deprecated):
+
+> ⚠️  Didomi's native integration with Adobe Commerce (formerly Magento 2) is now deprecated and no longer supported. If you wish to deploy Didomi on your Adobe Commerce website, please refer our [deployment guide](https://developers.didomi.io/integrations/tutorials/deploy-didomis-sdk-for-your-adobe-commerce-website).
 
 ### Overview:
 
